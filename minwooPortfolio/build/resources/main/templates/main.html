@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title th:text="${pageTitle}">Portfolio</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<!-- NAV BAR -->
+<div class="myNavbar">
+    <div class="container-fluid">
+        <div class="logo-container">
+            <a th:href="@{/index}" id="logo">MINU</a>
+        </div>
+        <div class="big-title">
+            <a href="#about"><span class="about"></span> About</a>
+            <a href="#portfolio"><span class="portfolio"></span> Portfolio</a>
+            <a href="#contact"><span class="contact"></span> Contact</a>
+        </div>
+    </div>
+</div>
+<!-- End Nav Bar -->
+
+<!-- Home / About -->
+<section class="image-bg-fluid-height" id="about">
+    <h1>About</h1>
+    <div class="about-inner">
+        <div id="about-intro-box">
+            <!-- 이름 -->
+            <h1 th:text="${aboutName}">Cheri Hammick</h1>
+            <div class="intro-headline-row">
+            <img class="profile-photo"
+                 src="/images/profileimg.jpg"
+                 alt="이민우 프로필 사진">
+
+            <!-- 역할/타이틀 -->
+            <h3 class="intro-headline">함께 하는 웹서비스 개발자 이민우입니다.</h3>
+            </div>
+            <h3><span class="little-title">학력사항</span><br> 2023.03-2025.02 <br>우송정보대학교 컴퓨터정보과 졸업</h3>
+            <h3><span class="little-title">교육활동</span><br> 2024.09-2025.02 <br>비트교육센터 우송비트고급과정 40기 <br>
+                2025.05-2025.12<br> K-디지털 트레이닝 에듀테크 메타버스 9회차</h3>
+            <h3><span class="little-title">수상내역</span><br> 우송비트고급과정 40기 팀 프로젝트 1등 수상 <br> 비트교육센터 특별공로상</h3>
+        </div>
+
+        <div id="skill-box">
+            <div class="skills-wrapper">
+                <h2 class="little-title">Skills</h2>
+
+                <div class="skills">
+                    <div class="skill">
+                        <div class="skill-header">
+                            <span class="skill-name">HTML / CSS</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill skill-html"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-header">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill skill-js"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-header">
+                            <span class="skill-name">Java / Spring Boot</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill skill-java"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-header">
+                            <span class="skill-name">MySQL</span>
+                            <span class="skill-percent">65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill skill-mysql"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-header">
+                            <span class="skill-name">Git hub</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill skill-git"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3><span class="little-title">관심분야</span> <br>
+                웹 개발, 프론트엔드 & 백엔드, 주변기기 소프트웨어</h3>
+        </div>
+    </div>
+</section>
+<!--End Home-->
+
+<!--Portfolio-->
+<section class="image-bg-fluid-height" id="portfolio">
+    <h1>Projects</h1>
+    <p class="portfolio-subtitle">
+        제가 직접 설계·구현한 웹 서비스입니다.
+    </p>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <h2 class="project-title">Note Binder</h2>
+            <p class="project-meta">2024.12 - 2025.02 · 내 역할 : 프론트엔드</p>
+            <p class="project-desc">
+                LLM 기반 자료조사 협업 프로그램입니다.
+            </p>
+
+            <ul class="project-tags">
+                <li class="project-tag">React</li>
+                <li class="project-tag">HTML/CSS</li>
+                <li class="project-tag">Electron</li>
+                <li class="project-tag">Java Script</li>
+            </ul>
+
+            <div class="project-links">
+                <a href="https://github.com/minu222/NoteBinder"
+                   target="_blank"
+                   class="project-link-btn outline">GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h2 class="project-title">Learn Up LMS</h2>
+            <p class="project-meta">2025.09 - 2025.10 · 내 역할 : 백엔드</p>
+            <p class="project-desc">
+                사용자 중심의 직관적인 UI/UX를 갖춘 효율적인 온라인 학습 관리 플랫폼입니다.
+            </p>
+
+            <ul class="project-tags">
+                <li class="project-tag">Spring Boot</li>
+                <li class="project-tag">JDBC</li>
+                <li class="project-tag">Thymeleaf</li>
+            </ul>
+
+            <div class="project-links">
+                <a href="http://ec2-3-39-187-178.ap-northeast-2.compute.amazonaws.com:8080/"
+                   target="_blank"
+                   class="project-link-btn">사이트 바로가기</a>
+                <a href="https://github.com/minu222/LearnUpLms"
+                   target="_blank"
+                   class="project-link-btn outline">GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h2 class="project-title">UrbanGreen</h2>
+            <p class="project-meta">2025.11 - 2025.12 · 내 역할 : 백엔드 & 프론트엔드</p>
+            <p class="project-desc">
+                농문에 입문하려는 청년들을 위한 농업 교육 lms입니다. 청년의 농업 진입 장벽을 제거하고 많은 이들에게
+                농업이 익숙해지는 것을 목표로 합니다.
+            </p>
+
+            <ul class="project-tags">
+                <li class="project-tag">Spring Boot</li>
+                <li class="project-tag">JDBC</li>
+                <li class="project-tag">Thymeleaf</li>
+                <li class="project-tag">WebSocket</li>
+            </ul>
+
+            <div class="project-links">
+                <a href="http://ec2-43-203-130-198.ap-northeast-2.compute.amazonaws.com:8080/"
+                   target="_blank"
+                   class="project-link-btn">사이트 바로가기</a>
+                <a href="https://github.com/minu222/urbangreen-project"
+                   target="_blank"
+                   class="project-link-btn outline">GitHub</a>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+<!-- End Portfolio -->
+
+<!-- Contact -->
+<section class="image-bg-fluid-height" id="contact">
+    <h3>E-Mail & Name</h3>
+    <h4>mwlee9844@naver.com <br>
+        이민우 <br> LEE MIN WOO</h4>
+    <h3>Adress</h3>
+    <h4>대전 서구 동서대로 1014번길 26 신성아파트 4동 106호</h4>
+</section>
+<!--End Contact -->
+
+<!-- JS 필요하면 추가 -->
+<!--
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+-->
+
+</body>
+</html>

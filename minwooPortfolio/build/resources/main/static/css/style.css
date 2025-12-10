@@ -1,0 +1,333 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 한 줄 정렬용 flex 컨테이너 */
+.myNavbar .container-fluid {
+    display: flex;
+    align-items: center;
+}
+
+/* 로고는 왼쪽에 딱 붙게 */
+.logo-container {
+    padding: 10px 20px;
+}
+
+#logo {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* 메뉴 3개는 같은 줄 + 가운데 정렬 */
+.big-title {
+    flex: 1;                  /* 로고 빼고 나머지 영역을 다 차지 */
+    text-align: center;       /* 그 영역 안에서 가운데 정렬 */
+}
+
+/* 메뉴 링크들 가로 배치 */
+.big-title a {
+    display: inline-block;
+    margin: 0 16px;           /* 메뉴 사이 간격 */
+    padding: 10px 0;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+/* 호버 효과 (원하면) */
+.big-title a:hover {
+    text-decoration: underline;
+}
+
+
+
+#about {
+    background-color: rgb(92,184,92);
+    position: relative;
+    color: white;
+    margin: 0px 0 0px 0;
+    padding: 50px;
+    padding-top : 60px;
+}
+
+#about h1 {
+    text-align: center;
+}
+
+.little-title {
+    color: #444b57;
+}
+
+.about-inner {
+    max-width: 1100px;          /* 전체 컨테이너 폭 */
+    margin: 0 auto;             /* 가운데 정렬 */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;                  /* 두 박스 사이 간격 */
+    flex-wrap: nowrap;               /* 화면 좁을 땐 아래로 떨어지게 */
+}
+
+#about-intro-box {
+    width: 700px;
+    text-align: left;           /* 글 왼쪽 정렬 */
+}
+
+#skill-box {
+    width: 600px;
+    text-align: left;           /* 막대바 설명도 왼쪽 정렬 */
+    margin-top: 160px;
+}
+
+/* 반응형: 화면 좁으면 위아래로 쌓이게 */
+@media (max-width: 768px) {
+    .about-inner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #about-intro-box,
+    #skill-box {
+        width: 100%;
+        max-width: 700px;
+    }
+}
+
+.skills-wrapper {
+    max-width: 700px;          /* 가운데 폭 제한 */
+    margin: 40px auto 0;       /* 위에 여백 + 가운데 정렬 */
+    text-align: left;          /* 글자는 왼쪽 정렬 */
+}
+
+.skills-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #fff;               /* 배경이 초록이니까 흰 글자 */
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;                 /* 스킬들 사이 간격 */
+}
+
+.skill {
+    width: 100%;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.skill-name {
+    font-weight: 600;
+}
+
+.skill-percent {
+    opacity: 0.9;
+}
+
+/* 바깥 막대 */
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.25);  /* 연한 흰색 */
+    overflow: hidden;
+}
+
+/* 안쪽 채워지는 막대 */
+.skill-bar-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: #ffffff;
+    /* 애니메이션 주고 싶으면 아래 두 줄 주석 해제
+    width: 0;
+    transition: width 0.8s ease;
+    */
+}
+
+/* 각 스킬별 숙련도 (%) */
+.skill-html  { width: 90%; }
+.skill-js    { width: 85%; }
+.skill-java  { width: 90%; }
+.skill-mysql { width: 65%; }
+.skill-git   { width: 85%; }
+
+#portfolio {
+    background-color: #00b33c;
+    position: relative;
+    text-align: center;
+    color: white;
+    margin: 0px 0 0px 0;
+    padding: 20px;
+}
+
+/* 포트폴리오 제목/설명 */
+#portfolio h1 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.portfolio-subtitle {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+/* 프로젝트 카드 레이아웃 */
+.project-grid {
+    max-width: 1100px;
+    margin: 24px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+/* 개별 카드 */
+.project-card {
+    background: #ffffff;
+    color: #222;
+    border-radius: 12px;
+    padding: 20px 20px 16px;
+    width: 260px;                /* 카드 폭 */
+    text-align: left;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* 카드 안 텍스트들 */
+.project-title {
+    font-size: 18px;
+    margin: 0 0 4px;
+}
+
+.project-meta {
+    font-size: 12px;
+    color: #777;
+    margin: 0 0 8px;
+}
+
+.project-desc {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0 0 12px;
+}
+
+/* 태그(스택) */
+.project-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0;
+    margin: 0 0 12px;
+}
+
+.project-tag {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: #e6f7ee;
+    color: #006633;
+}
+
+/* 링크 버튼들 */
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-link-btn {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    text-decoration: none;
+    border: 1px solid #00b33c;
+    color: #00b33c;
+    background: #ffffff;
+}
+
+.project-link-btn.outline {
+    background: transparent;
+}
+
+/* hover 느낌 */
+.project-link-btn:hover {
+    background: #00b33c;
+    color: #ffffff;
+}
+
+/* 반응형: 화면 좁을 땐 한 줄에 1~2개 */
+@media (max-width: 768px) {
+    .project-card {
+        width: 100%;
+        max-width: 360px;
+    }
+}
+
+#contact{
+    background-color: rgb(0, 102, 34);
+    position: relative;
+    text-align: center;
+    color: white;
+    margin: 0px 0 0px 0;
+    padding: 50px;
+}
+
+.intro-headline-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;                 /* 이미지와 문장 사이 간격 */
+    margin: 12px 0 16px;
+}
+
+#about-intro-box .profile-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;        /* 동그랗게 */
+    object-fit: cover;
+    display: block;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    margin: 0;                 /* 전역 img margin 영향 없게 */
+}
+
+/* 한 줄 소개 h3 여백 줄이기 */
+.intro-headline {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.4;
+    width: 500px;
+}
+
+.myNavbar{
+    background-color: rgb(0, 230, 138);
+    font-weight: bold;
+    color: white !important;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 0px;
+}
+.nav{
+    background-color: rgb(0, 230, 138);
+    font-weight: bold;
+    text-align: center;
+    color: white !important;
+}
+
+body {
+    padding-bottom: 70px;
+}
+
+
